@@ -7,15 +7,15 @@ var User = require('../models/user');
 
 // Register
 router.get('/register', function(req, res){
-//	var errors = null;
+//	var name = null;
 //	console.log(errors);
 //	console.log(success_msg);
 /*
-	res.render('register',{
-		errors:errors
-	});
 */	
-	res.render('register');
+	res.render('register',{
+		userInfo:null
+	});
+//	res.render('register');
 });
 
 // Login
@@ -44,7 +44,7 @@ router.post('/register', function(req, res){
 	if(errors){
 		console.log(errors);
 		res.render('register',{
-			errors:errors
+			errors:errors, userInfo:{name:name, email:email, username:username}
 		});
 	} else {
 	//	console.log('No Errors');

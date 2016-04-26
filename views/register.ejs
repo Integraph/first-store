@@ -10,15 +10,15 @@
 <form method="post" action="/users/register">
    <div class="form-group">
     <label>Name</label>
-    <input type="text" class="form-control" placeholder="Name" name="name">
+    <input type="text" class="form-control" placeholder="Name" name="name" value="<% if ( typeof userInfo == 'object' && userInfo ) { %><%= userInfo.name %><% } %>">
   </div>
   <div class="form-group">
     <label>Username</label>
-    <input type="text" class="form-control" placeholder="Username" name="username">
+    <input type="text" class="form-control" placeholder="Username" name="username" value="<% if ( typeof userInfo == 'object' && userInfo ) { %><%= userInfo.username %><% } %>">
   </div>
    <div class="form-group">
     <label>Email</label>
-    <input type="email" class="form-control" placeholder="Email" name="email">
+    <input type="email" class="form-control" placeholder="Email" name="email" value="<% if ( typeof userInfo == 'object' && userInfo ) { %> <%= userInfo.email %> <% } %>">
   </div>
   <div class="form-group">
     <label>Password</label>
